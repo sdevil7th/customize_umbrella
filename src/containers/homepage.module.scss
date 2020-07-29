@@ -1,0 +1,141 @@
+@import "../styles/consts.scss";
+
+@mixin colorTheme($bgColor, $btnColor) {
+  &.container {
+    background: $bgColor;
+  }
+  .loader {
+    fill: $btnColor;
+  }
+  .fileUploadInput {
+    background: $btnColor;
+  }
+}
+
+.blueUmbrella {
+  @include colorTheme($blue-background-color, $blue-btn-color);
+}
+.yellowUmbrella {
+  @include colorTheme($yellow-background-color, $yellow-btn-color);
+}
+.pinkUmbrella {
+  @include colorTheme($pink-background-color, $pink-btn-color);
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  > div {
+    flex-basis: 0;
+    flex-grow: 1;
+    padding: 0 20px;
+  }
+}
+
+.imgContainer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.umbrellaImg {
+  max-width: 100%;
+}
+
+.logoImg {
+  width: 15%;
+  max-width: 15%;
+  max-height: 15%;
+  position: absolute;
+  bottom: 10%;
+}
+
+.selectorContainer {
+  text-align: left;
+  margin-left: 80px;
+}
+.colorSelectorContainer {
+  display: flex;
+  padding: 20px 0;
+}
+
+.fileUploadInput {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  padding: 20px;
+  color: #fff;
+  font-weight: bold;
+  input {
+    display: none;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.uploadIcon {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  fill: #fff;
+}
+
+.removeIcon {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  fill: #fff;
+}
+
+.loader {
+  width: 100px;
+  height: 100px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .loader {
+    animation: loader-spin infinite 3s linear;
+  }
+}
+
+@keyframes loader-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(20deg);
+  }
+  20% {
+    transform: rotate(50deg);
+  }
+  30% {
+    transform: rotate(100deg);
+  }
+  40% {
+    transform: rotate(180deg);
+  }
+  50% {
+    transform: rotate(260deg);
+  }
+  60% {
+    transform: rotate(310deg);
+  }
+  70% {
+    transform: rotate(340deg);
+  }
+  80% {
+    transform: rotate(360deg);
+  }
+  90% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

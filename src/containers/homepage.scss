@@ -1,0 +1,38 @@
+@import "../styles/consts.scss";
+
+.bodyText {
+  font-size: 16px;
+}
+
+.captionText {
+  font-size: 12px;
+  font-weight: lighter;
+}
+
+.colorSelector {
+  width: 30px;
+  height: 30px;
+  margin-right: 20px;
+  border-radius: 50%;
+  border: 3px solid;
+}
+
+@mixin colorCircle($bgColor, $borderColor) {
+  background: $bgColor;
+  border-color: $bgColor;
+  &.selected {
+    border-color: $borderColor;
+  }
+}
+
+.blueCircle {
+  @include colorCircle($blue-btn-color, $blue-border-color);
+}
+
+.yellowCircle {
+  @include colorCircle($yellow-btn-color, $yellow-border-color);
+}
+
+.pinkCircle {
+  @include colorCircle($pink-btn-color, $pink-border-color);
+}
