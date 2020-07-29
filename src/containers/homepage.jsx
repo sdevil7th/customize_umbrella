@@ -57,6 +57,7 @@ class Homepage extends React.Component {
       return;
     }
     this.setLoading(true);
+    // setTimeout used to show the loader, otherwise it'd be instant and loader won't be shown
     setTimeout(() => {
       this.setState({
         uploadImageInput: files[0],
